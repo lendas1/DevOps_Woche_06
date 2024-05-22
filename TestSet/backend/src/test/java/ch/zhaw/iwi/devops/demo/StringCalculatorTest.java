@@ -42,4 +42,13 @@ public class StringCalculatorTest {
         assertEquals(3, calc.add("//;\n1;2")); // Der Test überprüft, ob Zahlen, getrennt durch ein benutzerdefiniertes
                                                // Trennzeichen, korrekt summiert werden.
     }
+
+    @Test
+    public void testNegativeNumbers() {
+        StringCalculator calc = new StringCalculator();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calc.add("1,-2,3");
+        });
+        assertEquals("Negatives not allowed: -2", exception.getMessage());
+    }
 }
