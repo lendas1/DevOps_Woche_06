@@ -16,4 +16,10 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(1, calc.add("1")); // Der Test erwartet, dass 1 zurückgegeben wird.
     }
+
+    @Test
+    public void testTwoNumbers() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(3, calc.add("1,2")); // Der Test überprüft, ob zwei Zahlen korrekt summiert werden.
+    }
 }
