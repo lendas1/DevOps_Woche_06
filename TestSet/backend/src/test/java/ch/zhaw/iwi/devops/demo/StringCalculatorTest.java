@@ -8,6 +8,12 @@ public class StringCalculatorTest {
     @Test
     public void testEmptyString() {
         StringCalculator calc = new StringCalculator();
-        assertEquals(0, calc.add(""));  // Der Test erwartet, dass 0 zurückgegeben wird.
+        assertEquals(0, calc.add("")); // Der Test erwartet, dass 0 zurückgegeben wird.
+    }
+
+    @Test
+    public void testSingleNumber() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(1, calc.add("1")); // Der Test erwartet, dass 1 zurückgegeben wird.
     }
 }
