@@ -21,14 +21,11 @@ public class StringCalculator {
             int number = Integer.parseInt(num.trim());
             if (number < 0) {
                 negatives.add(num.trim());
-                break;
             }
             sum += number;
         }
         if (!negatives.isEmpty()) {
-            throw new IllegalArgumentException("Negatives not allowed: " + negatives.get(0)); // Nur die erste negative
-                                                                                              // Zahl in der
-                                                                                              // Fehlermeldung
+            throw new IllegalArgumentException("Negatives not allowed: " + String.join(", ", negatives));
         }
         return sum; // Summiere alle getrennten Zahlen.
     }
