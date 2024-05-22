@@ -22,4 +22,10 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(3, calc.add("1,2")); // Der Test überprüft, ob zwei Zahlen korrekt summiert werden.
     }
+
+    @Test
+    public void testMultipleNumbers() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("1,2,3")); // Der Test überprüft, ob mehrere Zahlen korrekt summiert werden.
+    }
 }
