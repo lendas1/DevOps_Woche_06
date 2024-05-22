@@ -5,6 +5,15 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        return Integer.parseInt(numbers); // Korrektur nach Test2: Einzelne Zahl wird korrekt geparst und zurückgegeben.
+        if (numbers.contains(",")) {
+            String[] nums = numbers.split(",");
+            int sum = 0;
+            for (String num : nums) {
+                sum += Integer.parseInt(num.trim()); // Korrektur nach Test 3: Zahlen werden korrekt getrennt und
+                                                     // summiert.
+            }
+            return sum;
+        }
+        return Integer.parseInt(numbers);
     }
 }
