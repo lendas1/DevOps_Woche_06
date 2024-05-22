@@ -35,4 +35,11 @@ public class StringCalculatorTest {
         assertEquals(6, calc.add("1\n2,3")); // Der Test überprüft, ob Zahlen, getrennt durch Zeilenumbrüche und Kommas,
                                              // korrekt summiert werden.
     }
+
+    @Test
+    public void testCustomDelimiter() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(3, calc.add("//;\n1;2")); // Der Test überprüft, ob Zahlen, getrennt durch ein benutzerdefiniertes
+                                               // Trennzeichen, korrekt summiert werden.
+    }
 }
