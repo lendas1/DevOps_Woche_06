@@ -7,7 +7,11 @@ public class StringCalculator {
         }
         if (numbers.contains(",")) {
             String[] nums = numbers.split(",");
-            return Integer.parseInt(nums[0].trim()) + Integer.parseInt(nums[1].trim());
+            int sum = 0;
+            for (String num : nums) {
+                sum += Integer.parseInt(num.trim()); // Korrektur nach Test 4: Summiere alle getrennten Zahlen.
+            }
+            return sum;
         }
         return Integer.parseInt(numbers);
     }
