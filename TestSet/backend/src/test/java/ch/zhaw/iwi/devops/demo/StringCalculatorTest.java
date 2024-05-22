@@ -28,4 +28,11 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(6, calc.add("1,2,3")); // Der Test überprüft, ob mehrere Zahlen korrekt summiert werden.
     }
+
+    @Test
+    public void testNewLineDelimiter() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("1\n2,3")); // Der Test überprüft, ob Zahlen, getrennt durch Zeilenumbrüche und Kommas,
+                                             // korrekt summiert werden.
+    }
 }
