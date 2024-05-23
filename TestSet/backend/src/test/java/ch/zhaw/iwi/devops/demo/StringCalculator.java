@@ -21,8 +21,10 @@ public class StringCalculator {
             int number = Integer.parseInt(num.trim());
             if (number < 0) {
                 negatives.add(num.trim());
+            } else if (number <= 1000) {
+                sum += number; // Ignoriere Zahlen größer als 1000.
             }
-            sum += number;
+
         }
         if (!negatives.isEmpty()) {
             throw new IllegalArgumentException("Negatives not allowed: " + String.join(", ", negatives));
