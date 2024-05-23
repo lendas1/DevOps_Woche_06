@@ -66,4 +66,11 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(2, calc.add("1001,2")); // Der Test überprüft, ob Zahlen größer als 1000 ignoriert werden.
     }
+
+    @Test
+    public void testMultipleCustomDelimiters() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("//[;][%]\n1;2%3")); // Der Test überprüft, ob mehrere benutzerdefinierte Trennzeichen
+                                                      // unterstützt werden.
+    }
 }
